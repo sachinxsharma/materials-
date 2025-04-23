@@ -1,0 +1,10 @@
+
+idx <- sample(1:dim(iris)[1], 40)      # Randomly select 40 rows from iris dataset
+irisSample <- iris[idx, ]             # Take the sample
+irisSample$Species <- NULL            # Remove species label (for unsupervised learning)
+
+
+hc <- hclust(dist(irisSample), method = "ave")   # Clustering using average linkage
+
+# Step 3: Plot the Dendrogram
+plot(hc, hang = -1, labels = iris$Species[idx])  # Visualize clustering
