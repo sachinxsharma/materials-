@@ -8,3 +8,30 @@ hc <- hclust(dist(irisSample), method = "ave")   # Clustering using average link
 
 # Step 3: Plot the Dendrogram
 plot(hc, hang = -1, labels = iris$Species[idx])  # Visualize clustering
+
+
+
+
+#linear regression
+
+import pandas as pd
+import numpy as np
+import matlplotlib.pyplot as plt
+
+data = pd.read_csv('data.csv')
+
+X = datas.iloc[:, 1:2].values   
+y = datas.iloc[:, 2].values  
+  
+Step 3: Fitting Linear Regression to the dataset   
+ 
+from sklearn.linear_model import LinearRegression   
+lin = LinearRegression()   
+lin.fit(X, y)  
+
+plt.scatter(X, y, color = 'blue')   
+plt.plot(X, lin.predict(X), color = 'red')   
+plt.title('Linear Regression')   
+plt.xlabel('Temperature')   
+plt.ylabel('Pressure')   
+plt.show()  
